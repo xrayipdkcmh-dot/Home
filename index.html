@@ -1,22 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <title>CRT CHECK</title>
     <link rel="manifest" href="manifest.json">
-
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="RT KCMH Duty Roster">
     <link rel="apple-touch-icon" href="icon-192.png">
-
-    <meta name="theme-color" content="#4285f4">
-
-    <base target="_top">
+    <meta name="theme-color" content="#f9fafb">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: 'Inter', sans-serif;
+        background: #f9fafb;
+        color: #111827;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 24px;
+      }
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #1f2937;
+        text-align: center;
+      }
+      .subtitle {
+        font-size: 0.85rem;
+        color: #9ca3af;
+        margin-bottom: 36px;
+        text-align: center;
+      }
+      .btn {
+        display: block;
+        width: 220px;
+        text-align: center;
+        padding: 14px 0;
+        margin: 10px 0;
+        border: none;
+        border-radius: 12px;
+        background-color: #2563eb;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.2s, transform 0.15s;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      }
+      .btn:hover {
+        background-color: #1e40af;
+        transform: translateY(-2px);
+      }
+      footer {
+        margin-top: 40px;
+        font-size: 0.85rem;
+        color: #9ca3af;
+      }
+    </style>
   </head>
-  <body style="margin:0;padding:0;">
-    <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-      src="https://script.google.com/macros/s/AKfycbxz5ER5ua1rzewe6Huu0Yka3kNGdIaYTIdjtAzPFffK7CfXx4frOIlw7fnPxUGFIAvO/exec">
-    </iframe>
+  <body>
+    <h1>CRT CHECK</h1>
+    <p class="subtitle">RT KCMH Duty Roster</p>
+    <a href="https://xrayipdkcmh-dot.github.io/table/Index" class="btn">ตารางเวร</a>
+    <a href="https://xrayipdkcmh-dot.github.io/stat/Index" class="btn">สถิติรอบเวร</a>
+    <a href="https://xrayipdkcmh-dot.github.io/data/Index" class="btn">สถิติย้อนหลัง</a>
+    <a href="https://xrayipdkcmh-dot.github.io/Status/Index" class="btn">ความคืบหน้าตารางเวร</a>
+    <footer>© 2025 XRAY IPD KCMH</footer>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      }
+    </script>
   </body>
 </html>
